@@ -7,3 +7,10 @@ firewall_rule "http" do
   position 1
   action :allow
 end
+
+template "/etc/nginx/sites-enabled/gitlab" do
+  source "gitlab-nginx.erb"
+  owner "root"
+  group "root"
+  mode 0644
+end

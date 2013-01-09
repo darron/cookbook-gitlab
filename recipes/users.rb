@@ -43,6 +43,23 @@ user "gitlab" do
   supports :manage_home => true
 end
 
+["/home/gitlab/releases", "/home/gitlab/shared", "/home/gitlab/shared/config", "/home/gitlab/shared/system", "/home/gitlab/shared/log", "/home/gitlab/shared/pids"].each do |dir|
+  directory dir do
+    owner "gitlab"
+    group "gitlab"
+    mode 0775
+    not_if { FileTest.exists?("#{dir}") }
+  end
+end
+
+template "/home/gitlab/.pam_environment" do
+  source "pam_environment.erb"
+  owner "gitlab"
+  group "gitlab"
+  mode 0750
+  not_if { FileTest.exists?("/home/gitlab/.pam_environment") }
+end
+
 group "git" do
   members ['git', 'gitlab']
 end
