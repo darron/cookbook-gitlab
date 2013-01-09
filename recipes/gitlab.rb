@@ -19,8 +19,8 @@ service "gitlab" do
 end
 
 # Install the configs.
-template "/home/gitlab/shared/config/database.yml" do
-  source "database.yml.erb"
+cookbook_file "/home/gitlab/shared/config/database.yml" do
+  source "database.yml"
   owner "gitlab"
   group "gitlab"
   mode 0644
