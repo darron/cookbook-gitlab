@@ -24,7 +24,7 @@ gitlab:
 
   ## Email settings
   # Email address used in the "From" field in mails sent by GitLab
-  email_from: <%= ENV['EMAIL_FROM'] %>
+  email_from: gitlab@<%= node.name %>
 
   ## Project settings
   default_projects_limit: 1000
