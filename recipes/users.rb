@@ -103,3 +103,10 @@ template "/home/gitlab/.gitconfig" do
   group "gitlab"
   mode 0644
 end
+
+sudo 'gitlab' do
+  user "gitlab"
+  runas 'root'
+  commands ['/usr/sbin/service gitlab restart', '/usr/sbin/service nginx restart', '/usr/sbin/service gitlab start', '/usr/sbin/service nginx start', '/usr/sbin/service gitlab stop', '/usr/sbin/service nginx stop']
+  nopasswd true
+end
