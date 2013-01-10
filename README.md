@@ -7,7 +7,7 @@ This [Chef](http://www.opscode.com/chef/) cookbook and [Capistrano](https://gith
 
 I've separated it into two components because:
 
-1. I wanted to better understand the [setup process](https://github.com/gitlabhq/gitlabhq/blob/4-0-stable/doc/install/installation.md) from start to finish and build an idempotent Chef cookbook.
+1. I wanted to better understand the [setup process](https://github.com/gitlabhq/gitlab-recipes/tree/master/install/v4) from start to finish and build an idempotent Chef cookbook.
 2. I like the ability to push new releases using Capistrano.
 
 # Requirements
