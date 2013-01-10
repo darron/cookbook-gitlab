@@ -24,7 +24,7 @@ There's a Vagrant test vm available [here](https://dl.dropbox.com/u/695019/vagra
 # Usage
 
 1. Add your own ssh public keys to templates/default/gitlab_authorized_keys.erb
-2. Add recipe['gitlab::default'] to your node-s runlist - run: `chef-client`
+2. Add recipe[gitlab] to your node-s runlist - run: `chef-client`
 3. Edit :domain in config/deploy.rb and then: `cap deploy` (It may fail to "restart" at the end - that's OK.)
 4. Edit /home/gitlab/.pam_environment - that's where the database username / passsword are kept.
 5. `cap deploy:app_setup`
