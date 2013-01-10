@@ -33,6 +33,14 @@ directory "/home/git/.gitolite" do
   action :create
 end
 
+cookbook_file "/home/git/.gitolite/hooks/common/post-receive" do
+  source "post-receive"
+  owner "git"
+  group "git"
+  mode 0755
+  only_if { FileTest.exists?("/home/git/.gitolite/hooks/common/") }
+end
+
 bash "chown .gitolite folder" do
   user "root"
   cwd "/home/git"
