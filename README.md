@@ -23,13 +23,13 @@ There's a Vagrant test vm available [here](https://dl.dropbox.com/u/695019/vagra
 
 # Usage
 
-1. Add your own ssh public keys to templates/default/gitlab_authorized_keys.erb
-2. Add recipe[gitlab] to your node-s runlist - run: `chef-client`
-3. Edit :domain in config/deploy.rb and then: `cap deploy` (It may fail to "restart" at the end - that's OK.)
-4. Edit /home/gitlab/.pam_environment - that's where the database username / passsword are kept.
+1. Add your own ssh public keys to `templates/default/gitlab_authorized_keys.erb`
+2. Add `recipe[gitlab]` to your node's runlist - run: `chef-client`
+3. Edit `:domain` in `config/deploy.rb` and then: `cap deploy` (It may fail to "restart" at the end - that's OK.)
+4. Edit `/home/gitlab/.pam_environment` - that's where the database username / passsword are kept.
 5. `cap deploy:app_setup`
 6. `cap deploy:start`
-7. Browse to :domain and sign in as the default user. (admin@local.host / 5iveL!fe) NOTE: You may need to give it a second to compile all of the assets and get spun up properly - if you see an Nginx 502 Gateway error give it a second.
+7. Browse to the ip address and sign in as the default user. (admin@local.host / 5iveL!fe) NOTE: You may need to give it a second to compile all of the assets and get spun up properly - if you see an Nginx 502 Gateway error give it a second.
 8. Profit
 
 # Attributes
