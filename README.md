@@ -17,7 +17,7 @@ Tested on Ubuntu 12.0.4 using:
 1. [Vagrant](http://www.vagrantup.com)
 2. [Rackspace Cloud](http://www.rackspace.com/cloud/)
 
-You need to have Ruby 1.9.3-p327, Bundler and Chef already installed.
+You need to have Ruby 1.9.3-p327, Bundler and Chef already installed - [I have included my Ubuntu 12.0.4LTS bootstrap](https://github.com/darron/cookbook-gitlab/blob/master/config/bootstrap.rb).
 
 There's a Vagrant test vm available [here](https://dl.dropbox.com/u/695019/vagrant/precise-193p327.box).
 
